@@ -4,14 +4,10 @@ Cornerstone Digital is a service-based e-commerce web application that enables u
 The platform is built using C# for both frontend and backend, showcasing full-stack development skills.
 
 🚀 Project Overview
-
-🏫 Developed as part of a group academic project
-
-🛍 Focuses on selling services instead of physical products
-
-🧠 Simulates a real-world digital consulting agency
-
-🌍 Allows clients to order services and track project progress online
+Developed as part of a group academic project
+Focuses on selling services instead of physical products
+Simulates a real-world digital consulting agency
+Allows clients to order services and track project progress online
 
 🎯 Objectives
 
