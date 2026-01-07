@@ -1,4 +1,4 @@
-# cornerstone-digital
+# Cornerstone-digital
 
 📌 Cornerstone Digital – E-Commerce Consulting Platform
 
