@@ -1,77 +1,73 @@
-🧱 Cornerstone Digital – E-Commerce Consulting Platform
+# 🧱 Cornerstone Digital – E-Commerce Consulting Platform
 
-Cornerstone Digital is a service-based e-commerce web application that enables users to browse, purchase, and manage digital consulting services such as website development, UX/UI design, and portfolio creation.
-The platform is built using C# for both frontend and backend, showcasing full-stack development skills.
+Cornerstone Digital is a **service-based e-commerce web application** that enables users to browse, purchase, and manage **digital consulting services** such as **website development, UX/UI design, and portfolio creation**.
+The platform is built using **C# for both frontend and backend**, showcasing full-stack development skills.
 
-🚀 Project Overview
-Developed as part of a group academic project
-Focuses on selling services instead of physical products
-Simulates a real-world digital consulting agency
-Allows clients to order services and track project progress online
+---
 
-🎯 Objectives
+## 🚀 Project Overview
 
-✅ Build a full-stack e-commerce application using C#
+* 🏫 Developed as part of a **group academic project**
+* 🛍 Focuses on **selling services instead of physical products**
+* 🧠 Simulates a **real-world digital consulting agency**
+* 🌍 Allows clients to order services and track project progress online
 
-✅ Implement service-based purchasing workflows
+---
 
-✅ Apply software engineering best practices
+## 🎯 Objectives
 
-✅ Use GitHub for version control and collaboration
+* ✅ Build a **full-stack e-commerce application** using C#
+* ✅ Implement **service-based purchasing workflows**
+* ✅ Apply **software engineering best practices**
+* ✅ Use **GitHub for version control and collaboration**
 
-🧩 Services Offered
+---
 
-🌐 Website Development
+## 🧩 Services Offered
 
-🎨 UX / UI Design
+* 🌐 **Website Development**
+* 🎨 **UX / UI Design**
+* 📁 **Portfolio Website Creation**
+* 🧠 **Digital Consulting**
+* 🔧 **Website Maintenance & Optimization**
 
-📁 Portfolio Website Creation
+---
 
-🧠 Digital Consulting
+## ✨ Key Features
 
-🔧 Website Maintenance & Optimization
+* 👤 **User registration and authentication**
+* 🛒 **Browse and purchase consulting services**
+* 📝 **Service-based checkout system**
+* 🛠 **Admin service and order management**
+* 🗄 **Database-driven architecture**
 
-✨ Key Features
+---
 
-👤 User registration and authentication
+## 🛠 Technology Stack
 
-🛒 Browse and purchase consulting services
+### 🔙 Backend
 
-📝 Service-based checkout system
+* ⚙️ C#
+* 🧱 ASP.NET Core
+* 🗃 Entity Framework Core
+* 🗄 SQL Server
 
-🛠 Admin service and order management
+### 🎨 Frontend
 
-🗄 Database-driven architecture
+* 🖥 ASP.NET MVC (Razor Pages) **or** Blazor
+* 🎨 Bootstrap
 
-🛠 Technology Stack
-🔙 Backend
+### 🧰 Tools
 
-⚙️ C#
+* 💻 Visual Studio
+* 🔧 Git & GitHub
+* 🗂 SQL Server Management Studio
 
-🧱 ASP.NET Core
+---
 
-🗃 Entity Framework Core
+## 📄 License
 
-🗄 SQL Server
+* 🎓 Developed **for educational purposes only**
+* 📚 All code and assets are intended for **academic use**
 
-🎨 Frontend
 
-🖥 ASP.NET MVC (Razor Pages) or Blazor
-
-🎨 Bootstrap
-
-🧰 Tools
-
-💻 Visual Studio
-
-🔧 Git & GitHub
-
-🗂 SQL Server Management Studio
-
-📄 License
-
-🎓 Developed for educational purposes only
-
-📚 All code and assets are intended for academic use
-
-🚫 Not licensed for commercial deployment
