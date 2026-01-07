@@ -7,39 +7,39 @@ The platform is built using **C# for both frontend and backend**, showcasing ful
 
 ## 🚀 Project Overview
 
-* 🏫 Developed as part of a **group academic project**
-* 🛍 Focuses on **selling services instead of physical products**
-* 🧠 Simulates a **real-world digital consulting agency**
-* 🌍 Allows clients to order services and track project progress online
+* Developed as part of a **group academic project**
+* Focuses on **selling services instead of physical products**
+* Simulates a **real-world digital consulting agency**
+* Allows clients to order services and track project progress online
 
 ---
 
 ## 🎯 Objectives
 
-* ✅ Build a **full-stack e-commerce application** using C#
-* ✅ Implement **service-based purchasing workflows**
-* ✅ Apply **software engineering best practices**
-* ✅ Use **GitHub for version control and collaboration**
+* Build a **full-stack e-commerce application** using C#
+* Implement **service-based purchasing workflows**
+* Apply **software engineering best practices**
+* Use **GitHub for version control and collaboration**
 
 ---
 
 ## 🧩 Services Offered
 
-* 🌐 **Website Development**
-* 🎨 **UX / UI Design**
-* 📁 **Portfolio Website Creation**
-* 🧠 **Digital Consulting**
-* 🔧 **Website Maintenance & Optimization**
+* **Website Development**
+* **UX / UI Design**
+* **Portfolio Website Creation**
+* **Digital Consulting**
+* **Website Maintenance & Optimization**
 
 ---
 
 ## ✨ Key Features
 
-* 👤 **User registration and authentication**
-* 🛒 **Browse and purchase consulting services**
-* 📝 **Service-based checkout system**
-* 🛠 **Admin service and order management**
-* 🗄 **Database-driven architecture**
+* **User registration and authentication**
+* **Browse and purchase consulting services**
+* **Service-based checkout system**
+* **Admin service and order management**
+* **Database-driven architecture**
 
 ---
 
@@ -47,27 +47,27 @@ The platform is built using **C# for both frontend and backend**, showcasing ful
 
 ### 🔙 Backend
 
-* ⚙️ C#
-* 🧱 ASP.NET Core
-* 🗃 Entity Framework Core
-* 🗄 SQL Server
+* C#
+* ASP.NET Core
+* Entity Framework Core
+* SQL Server
 
 ### 🎨 Frontend
 
-* 🖥 ASP.NET MVC (Razor Pages) **or** Blazor
-* 🎨 Bootstrap
+* ASP.NET MVC (Razor Pages) **or** Blazor
+* Bootstrap
 
 ### 🧰 Tools
 
-* 💻 Visual Studio
-* 🔧 Git & GitHub
-* 🗂 SQL Server Management Studio
+* Visual Studio
+* Git & GitHub
+* SQL Server Management Studio
 
 ---
 
 ## 📄 License
 
-* 🎓 Developed **for educational purposes only**
-* 📚 All code and assets are intended for **academic use**
+* Developed **for educational purposes only**
+* All code and assets are intended for **academic use**
 
 
