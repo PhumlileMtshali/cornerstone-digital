@@ -64,6 +64,64 @@ The platform is built using **C# for both frontend and backend**, showcasing ful
 * SQL Server Management Studio
 
 ---
+## 📂 Project Structure
+
+The project follows the ASP.NET MVC architecture with a clear separation of concerns:
+```
+/Controllers      # Handles HTTP requests and application flow
+/Models           # Domain models and data entities
+/Views            # Razor views (UI layer)
+/Data             # Database context and migrations
+/Services         # Business logic and service layer
+/wwwroot          # Static files (CSS, JS, images)
+/appsettings.json # Application configuration settings
+```
+---
+
+## 🧑‍💻 How to Run the Project Locally
+
+### Prerequisites
+- Visual Studio 2022 or later  
+- .NET SDK  
+- SQL Server or SQL Server Express  
+
+### Steps
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/PhumlileMtshali/cornerstone-digital.git
+   ```
+2. Open the solution file in Visual Studio
+
+3. Restore NuGet packages:
+
+- Visual Studio will restore automatically, or
+
+- Right-click the solution → Restore NuGet Packages
+
+4. Update the database connection string in appsettings.json
+
+5. Run database migrations:
+
+- Using Package Manager Console:
+
+```
+Update-Database
+Or using .NET CLI:
+```
+
+```
+dotnet ef database update
+```
+6. Start the application:
+
+- Press F5 or click Run in Visual Studio
+
+- Access the application in your browser:
+```
+https://localhost:xxxx
+```
+---
 
 ## 📄 License
 
