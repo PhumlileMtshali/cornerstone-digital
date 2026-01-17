@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CornerstoneDigital</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/cart.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/services.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/CornerstoneDigital.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1CmO3+1J2KkK8Qe+6b0bG1eHkKX1D9o3fGg1mQeQ6h1Y9V7K9V7g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo.png" alt="CornerstoneDigital Logo" class="brand-logo" />
+                    <span class="brand-name">CornerstoneDigital</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Services" asp-action="Index">SERVICES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Contact" asp-action="Index">CONTACT</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex gap-2 align-items-center">
+                        <a asp-controller="Cart" asp-action="Index" class="cart-icon-link">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="user-menu-dropdown">
+                                <button class="btn-user-menu" id="userMenuButton">
+                                    <i class="fas fa-user-circle"></i>
+                                    <span>@await Component.InvokeAsync("UserDisplayName")</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="user-dropdown-menu" id="userDropdownMenu">
+                                    <a asp-controller="Services" asp-action="Index" class="dropdown-item">
+                                        <i class="fas fa-shopping-bag"></i> Browse Services
+                                    </a>
+                                    <a asp-controller="Cart" asp-action="Index" class="dropdown-item">
+                                        <i class="fas fa-shopping-cart"></i> My Cart
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <form asp-controller="Account" asp-action="Logout" method="post" class="dropdown-form">
+                                        <button type="submit" class="dropdown-item dropdown-item-logout">
+                                            <i class="fas fa-sign-out-alt"></i> Logout
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-outline-primary">LOGIN</a>
+                            <a asp-controller="Account" asp-action="Register" class="btn btn-primary">START FREE TRIAL</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CornerstoneDigital</h3>
+                <p>E-commerce consulting platform delivering premium digital solutions for businesses ready to scale online.</p>
+                <div class="footer-contact">
+                    <div class="contact-item"><i class="fas fa-envelope"></i><span>help@cornerstonedigital.com</span></div>
+                    <div class="contact-item"><i class="fas fa-phone"></i><span>+27 60 444 1771</span></div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>cornerstonedigital.app</span></div>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a href="#services">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 CornerstoneDigital. All rights reserved.
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // Update cart count on page load
+        $(document).ready(function() {
+            updateCartCount();
+
+            // User dropdown menu toggle
+            const userMenuButton = document.getElementById('userMenuButton');
+            const userDropdownMenu = document.getElementById('userDropdownMenu');
+
+            if (userMenuButton && userDropdownMenu) {
+                userMenuButton.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    userDropdownMenu.classList.toggle('show');
+                    userMenuButton.classList.toggle('active');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!userMenuButton.contains(e.target) && !userDropdownMenu.contains(e.target)) {
+                        userDropdownMenu.classList.remove('show');
+                        userMenuButton.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        function updateCartCount() {
+            $.get('/Cart/GetCartCount', function(data) {
+                $('#cartCount').text(data.count);
+                if (data.count > 0) {
+                    $('#cartCount').show();
+                } else {
+                    $('#cartCount').hide();
+                }
+            });
+        }
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

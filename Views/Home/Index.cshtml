@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="hero-section">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">Transform Your Digital Presence</h1>
+            <p class="hero-subtitle">Premium e-commerce consulting services for businesses ready to scale. From website development to UX/UI design, we bring your digital vision to life.</p>
+            <div class="hero-actions">
+                <a asp-controller="Account" asp-action="Register" class="btn-hero-primary">GET STARTED →</a>
+                <p class="hero-note">Professional services • Expert consultants • Delivery in 2-4 weeks</p>
+            </div>
+        </div>
+        <!-- hero visual removed per request; background will show through -->
+    </div>
+</div>
+
+<section id="services" class="services-section">
+    <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Comprehensive digital solutions tailored to your business needs</p>
+    </div>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3 class="service-title">Website Development</h3>
+            <p class="service-description">Custom web solutions built with modern technologies. From e-commerce platforms to corporate websites, we deliver scalable and responsive applications.</p>
+            <div class="service-details">
+                <span class="price">From R15,000</span>
+                <span class="delivery">2-4 weeks</span>
+            </div>
+            <a asp-controller="Services" asp-action="Index" class="btn-view-more">
+                View More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="service-card">
+            <h3 class="service-title">UX/UI Design</h3>
+            <p class="service-description">Beautiful, intuitive interfaces that enhance user experience and drive engagement. User-centered design that converts visitors into customers.</p>
+            <div class="service-details">
+                <span class="price">From R8,000</span>
+                <span class="delivery">1-2 weeks</span>
+            </div>
+            <a asp-controller="Services" asp-action="Index" class="btn-view-more">
+                View More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="service-card">
+            <h3 class="service-title">E-Commerce Solutions</h3>
+            <p class="service-description">Complete online store setup with payment integration, inventory management, and secure checkout. Build your digital storefront with confidence.</p>
+            <div class="service-details">
+                <span class="price">From R20,000</span>
+                <span class="delivery">3-5 weeks</span>
+            </div>
+            <a asp-controller="Services" asp-action="Index" class="btn-view-more">
+                View More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="service-card">
+            <h3 class="service-title">Mobile App Development</h3>
+            <p class="service-description">Native and cross-platform mobile applications for iOS and Android. Deliver seamless experiences on any device your customers use.</p>
+            <div class="service-details">
+                <span class="price">From R25,000</span>
+                <span class="delivery">4-6 weeks</span>
+            </div>
+            <a asp-controller="Services" asp-action="Index" class="btn-view-more">
+                View More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="service-card">
+            <h3 class="service-title">Digital Marketing</h3>
+            <p class="service-description">SEO optimization, social media strategy, and content marketing to boost your online presence and drive traffic to your digital platforms.</p>
+            <div class="service-details">
+                <span class="price">From R6,000</span>
+                <span class="delivery">Ongoing</span>
+            </div>
+            <a asp-controller="Services" asp-action="Index" class="btn-view-more">
+                View More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="service-card">
+            <h3 class="service-title">Brand Identity Design</h3>
+            <p class="service-description">Complete brand identity packages including logo design, color palette, typography, and brand guidelines to establish your unique presence.</p>
+            <div class="service-details">
+                <span class="price">From R10,000</span>
+                <span class="delivery">2-3 weeks</span>
+            </div>
+            <a asp-controller="Services" asp-action="Index" class="btn-view-more">
+                View More <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about-section">
+    <div class="about-container">
+        <div class="about-content">
+            <h2 class="about-title">Why Choose CornerstoneDigital?</h2>
+            <p class="about-text">We are a service-based e-commerce platform dedicated to delivering exceptional digital consulting solutions. Our team combines creativity with technical expertise to build platforms that drive real business results.</p>
+            <ul class="about-features">
+                <li><i class="fas fa-check-circle"></i> Full-stack development expertise</li>
+                <li><i class="fas fa-check-circle"></i> User-centered design approach</li>
+                <li><i class="fas fa-check-circle"></i> Scalable e-commerce solutions</li>
+                <li><i class="fas fa-check-circle"></i> Agile project management</li>
+                <li><i class="fas fa-check-circle"></i> Post-launch support & maintenance</li>
+                <li><i class="fas fa-check-circle"></i> Competitive pricing for quality work</li>
+            </ul>
+        </div>
+        <div class="about-visual">
+            <div class="about-stats-card">
+                <div class="about-stat">
+                    <h3>100+</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="about-stat">
+                    <h3>98%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="about-stat">
+                    <h3>50+</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

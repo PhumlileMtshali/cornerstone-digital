@@ -1,0 +1,73 @@
+@model CornerstoneDigital.Models.Cart
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<div class="checkout-container">
+    <div class="checkout-header">
+        <h1>Checkout</h1>
+        <p>Review your order and provide project details</p>
+    </div>
+
+    <div class="checkout-content">
+        <div class="checkout-main">
+            <div class="checkout-section">
+                <h2>Order Items</h2>
+                @foreach (var item in Model.CartItems)
+                {
+                    <div class="checkout-item">
+                        <div class="checkout-item-info">
+                            <h3>@item.Service.Name</h3>
+                            <p>@item.Service.Description</p>
+                            <p class="checkout-item-delivery"><i class="fas fa-clock"></i> @item.Service.DeliveryTime</p>
+                        </div>
+                        <div class="checkout-item-price">
+                            <span>R @item.Price.ToString("N0") x @item.Quantity</span>
+                            <strong>R @((item.Price * item.Quantity).ToString("N0"))</strong>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <form asp-action="ProcessCheckout" method="post" class="checkout-form">
+                <div class="checkout-section">
+                    <h2>Project Details</h2>
+                    <p class="form-help">Tell us about your project requirements and any specific details we should know</p>
+                    <textarea name="projectDetails" class="form-control" rows="6" placeholder="Describe your project requirements, timeline, specific features needed, etc."></textarea>
+                </div>
+
+                <div class="checkout-actions">
+                    <a asp-action="Index" class="btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Cart
+                    </a>
+                    <button type="submit" class="btn-place-order">
+                        <i class="fas fa-check-circle"></i> Place Order
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="checkout-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-items">
+                @foreach (var item in Model.CartItems)
+                {
+                    <div class="summary-item">
+                        <span>@item.Service.Name (x@item.Quantity)</span>
+                        <span>R @((item.Price * item.Quantity).ToString("N0"))</span>
+                    </div>
+                }
+            </div>
+            <hr />
+            <div class="summary-total">
+                <span>Total Amount</span>
+                <span>R @Model.CartItems.Sum(ci => ci.Price * ci.Quantity).ToString("N0")</span>
+            </div>
+            <div class="checkout-info">
+                <i class="fas fa-info-circle"></i>
+                <p>We'll contact you within 24 hours to discuss your project and payment options.</p>
+            </div>
+        </div>
+    </div>
+</div>

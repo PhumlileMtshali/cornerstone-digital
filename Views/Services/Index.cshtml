@@ -1,0 +1,85 @@
+@model IEnumerable<CornerstoneDigital.Models.Service>
+
+@{
+    ViewData["Title"] = "Our Services";
+}
+
+<div class="services-page-container">
+    <div class="services-page-header">
+        <h1>Our Services</h1>
+        <p>Choose the perfect service for your business needs and add it to your cart</p>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert-success">
+            <i class="fas fa-check-circle"></i> @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <div class="services-page-grid">
+        @foreach (var service in Model)
+        {
+            <div class="service-card-full">
+                <div class="service-card-header">
+                    <h2 class="service-card-title">@service.Name</h2>
+                    <div class="service-card-price">
+                        <span class="price-amount">R @service.Price.ToString("N0")</span>
+                        <span class="price-label">Starting from</span>
+                    </div>
+                </div>
+
+                <div class="service-card-body">
+                    <p class="service-card-description">@service.Description</p>
+
+                    <div class="service-card-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Delivery: @service.DeliveryTime</span>
+                        </div>
+                        @if (!string.IsNullOrEmpty(service.Features))
+                        {
+                            <div class="meta-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>@service.Features</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="service-card-actions">
+                    <form asp-controller="Cart" asp-action="AddToCart" method="post" class="add-to-cart-form">
+                        <input type="hidden" name="serviceId" value="@service.Id" />
+                        <div class="form-group">
+                            <label for="notes-@service.Id">Project Notes (Optional)</label>
+                            <textarea
+                                id="notes-@service.Id"
+                                name="customizationNotes"
+                                class="form-control"
+                                rows="2"
+                                placeholder="Any specific requirements or details about your project..."></textarea>
+                        </div>
+                        <div class="button-group">
+                            <a asp-action="Details" asp-route-id="@service.Id" class="btn-view-details">
+                                <i class="fas fa-info-circle"></i> View Details
+                            </a>
+                            <button type="submit" class="btn-add-to-cart-full">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="services-page-footer">
+        <div class="footer-cta">
+            <h3>Ready to get started?</h3>
+            <p>Add services to your cart and proceed to checkout. We'll contact you within 24 hours.</p>
+            <a asp-controller="Cart" asp-action="Index" class="btn-view-cart">
+                <i class="fas fa-shopping-cart"></i> View Cart
+            </a>
+        </div>
+    </div>
+</div>

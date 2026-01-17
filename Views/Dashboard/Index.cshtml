@@ -1,0 +1,91 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <div class="welcome-section">
+            <h1 class="dashboard-title">Welcome back, @ViewBag.UserName!</h1>
+            <p class="dashboard-subtitle">Manage your digital transformation journey from here</p>
+        </div>
+    </div>
+
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <div class="stat-icon-box">
+                🛒
+            </div>
+            <div class="stat-content">
+                <h3 class="stat-number">@ViewBag.CartItemCount</h3>
+                <p class="stat-label">Items in Cart</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon-box">
+                💼
+            </div>
+            <div class="stat-content">
+                <h3 class="stat-number">@ViewBag.TotalServices</h3>
+                <p class="stat-label">Services Available</p>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon-box">
+                🎧
+            </div>
+            <div class="stat-content">
+                <h3 class="stat-number">24/7</h3>
+                <p class="stat-label">Support Available</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-actions">
+        <div class="action-card">
+            <div class="action-icon">
+                🛍️
+            </div>
+            <h3 class="action-title">Browse Services</h3>
+            <p class="action-description">Explore our comprehensive range of digital services tailored to your business needs.</p>
+            <a asp-controller="Services" asp-action="Index" class="btn-action">
+                View All Services <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="action-card">
+            <div class="action-icon">
+                🛒
+            </div>
+            <h3 class="action-title">My Cart</h3>
+            <p class="action-description">Review your selected services and proceed to checkout when you're ready.</p>
+            <a asp-controller="Cart" asp-action="Index" class="btn-action">
+                Go to Cart <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="action-card">
+            <div class="action-icon">
+                💬
+            </div>
+            <h3 class="action-title">Contact Us</h3>
+            <p class="action-description">Have questions? Our team is here to help you make the right choice for your business.</p>
+            <a asp-controller="Contact" asp-action="Index" class="btn-action">
+                Get in Touch <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="dashboard-info">
+        <div class="info-banner">
+            <div class="info-content">
+                <i class="fas fa-lightbulb"></i>
+                <div>
+                    <h4>Why CornerstoneDigital?</h4>
+                    <p>We deliver premium digital solutions with AI-powered technology, expert consultation, and dedicated support to help your business thrive online.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

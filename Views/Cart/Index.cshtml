@@ -1,0 +1,107 @@
+@model CornerstoneDigital.Models.Cart
+
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+
+<div class="cart-container">
+    <div class="cart-header">
+        <h1>Shopping Cart</h1>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert-success">@TempData["SuccessMessage"]</div>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert-error">@TempData["ErrorMessage"]</div>
+        }
+    </div>
+
+    @if (Model.CartItems.Any())
+    {
+        <div class="cart-content">
+            <div class="cart-items">
+                @foreach (var item in Model.CartItems)
+                {
+                    <div class="cart-item">
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-title">@item.Service.Name</h3>
+                            <p class="cart-item-description">@item.Service.Description</p>
+                            <p class="cart-item-delivery"><i class="fas fa-clock"></i> Delivery: @item.Service.DeliveryTime</p>
+                            @if (!string.IsNullOrEmpty(item.CustomizationNotes))
+                            {
+                                <p class="cart-item-notes"><i class="fas fa-sticky-note"></i> @item.CustomizationNotes</p>
+                            }
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="cart-item-price">
+                                <span class="price-label">Price:</span>
+                                <span class="price-value">R @item.Price.ToString("N0")</span>
+                            </div>
+                            <div class="cart-item-quantity">
+                                <form asp-action="UpdateQuantity" method="post" class="quantity-form">
+                                    <input type="hidden" name="cartItemId" value="@item.Id" />
+                                    <button type="submit" name="quantity" value="@(item.Quantity - 1)" class="qty-btn" @(item.Quantity <= 1 ? "disabled" : "")>
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span class="qty-display">@item.Quantity</span>
+                                    <button type="submit" name="quantity" value="@(item.Quantity + 1)" class="qty-btn">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="cart-item-total">
+                                <span class="total-label">Total:</span>
+                                <span class="total-value">R @((item.Price * item.Quantity).ToString("N0"))</span>
+                            </div>
+                            <form asp-action="RemoveFromCart" method="post" class="remove-form">
+                                <input type="hidden" name="cartItemId" value="@item.Id" />
+                                <button type="submit" class="btn-remove" onclick="return confirm('Remove this item from cart?')">
+                                    <i class="fas fa-trash"></i> Remove
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span>R @Model.CartItems.Sum(ci => ci.Price * ci.Quantity).ToString("N0")</span>
+                </div>
+                <div class="summary-row">
+                    <span>Items:</span>
+                    <span>@Model.CartItems.Sum(ci => ci.Quantity)</span>
+                </div>
+                <hr />
+                <div class="summary-row summary-total">
+                    <span>Total:</span>
+                    <span>R @Model.CartItems.Sum(ci => ci.Price * ci.Quantity).ToString("N0")</span>
+                </div>
+                <div class="cart-summary-actions">
+                    <a asp-action="Checkout" class="btn-checkout">
+                        <i class="fas fa-shopping-cart"></i> Proceed to Checkout
+                    </a>
+                    <form asp-action="ClearCart" method="post" style="margin-top: 1rem;">
+                        <button type="submit" class="btn-clear" onclick="return confirm('Clear all items from cart?')">
+                            <i class="fas fa-times-circle"></i> Clear Cart
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="cart-empty">
+            <i class="fas fa-shopping-cart"></i>
+            <h2>Your cart is empty</h2>
+            <p>Browse our services and add items to your cart</p>
+            <a asp-controller="Home" asp-action="Index" class="btn-browse">
+                <i class="fas fa-arrow-left"></i> Browse Services
+            </a>
+        </div>
+    }
+</div>

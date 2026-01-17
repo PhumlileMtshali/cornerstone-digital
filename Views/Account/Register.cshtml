@@ -1,0 +1,67 @@
+﻿@model CornerstoneDigital.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h2>Create Account</h2>
+            <p>Join Cornerstone Digital today</p>
+        </div>
+
+        <form asp-action="Register" method="post" class="auth-form">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="FirstName"></label>
+                    <input asp-for="FirstName" class="form-control" placeholder="John" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="LastName"></label>
+                    <input asp-for="LastName" class="form-control" placeholder="Doe" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Company"></label>
+                <input asp-for="Company" class="form-control" placeholder="Your Company (Optional)" />
+                <span asp-validation-for="Company" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" placeholder="you@example.com" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" placeholder="••••••••" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" placeholder="••••••••" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn-primary">Create Account</button>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a asp-action="Login">Sign in</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,233 @@
+/* ===== DASHBOARD PAGE ===== */
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: var(--light-orange-2);
+    min-height: calc(100vh - 200px);
+}
+
+.dashboard-header {
+    margin-bottom: 3rem;
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.dashboard-title {
+    font-size: 2.75rem;
+    color: var(--dark-crimson);
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.dashboard-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+}
+
+/* Dashboard Stats */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: white;
+    border: 2px solid var(--light-orange);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--gray-orange);
+}
+
+.stat-icon-box {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--dark-crimson), var(--gray-orange));
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark-crimson);
+    margin: 0;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+/* Dashboard Actions */
+.dashboard-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.action-card {
+    background: white;
+    border: 2px solid var(--light-orange);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.action-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--gray-orange);
+}
+
+.action-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--light-orange), var(--light-orange-2));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+    font-size: 3rem;
+}
+
+.action-card:hover .action-icon {
+    background: linear-gradient(135deg, var(--dark-crimson), var(--gray-orange));
+    transform: scale(1.1);
+}
+
+.action-title {
+    font-size: 1.5rem;
+    color: var(--dark-crimson);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.action-description {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    flex: 1;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--dark-crimson);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-action:hover {
+    background: var(--gray-orange);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Dashboard Info Banner */
+.dashboard-info {
+    margin-bottom: 2rem;
+}
+
+.info-banner {
+    background: linear-gradient(135deg, var(--dark-crimson), var(--gray-orange));
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    color: white;
+}
+
+.info-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.info-content > i {
+    font-size: 3rem;
+    opacity: 0.9;
+    flex-shrink: 0;
+}
+
+.info-content h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+.info-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.95;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .dashboard-title {
+        font-size: 2rem;
+    }
+
+    .dashboard-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .info-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-content > i {
+        font-size: 2.5rem;
+    }
+}

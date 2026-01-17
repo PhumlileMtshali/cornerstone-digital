@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html >
+<html lang="en" >
+<head >
+<meta charset="utf-8" / >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" / >
+<title > @ViewData["Title"] - Cornerstone Digital</title >
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" / >
+</head >
+<body >
+<header >
+<nav class="navbar" >
+<div class="nav-container" >
+<a asp-controller="Home" asp-action="Index" class="logo" >
+<span class="logo-icon" > ◆</span >
+<span class="logo-text" > CornerstoneDigital</span >
+</a >
+
+<button class="mobile-toggle" id="mobileToggle" >
+<span > </span >
+<span > </span >
+<span > </span >
+</button >
+
+<ul class="nav-menu" id="navMenu" >
+<li > <a asp-controller="Home" asp-action="Index" class="nav-link" > HOME</a > </li >
+<li > <a href="#services" class="nav-link" > FEATURES</a > </li >
+<li > <a href="#about" class="nav-link" > ABOUT</a > </li >
+<li > <a asp-controller="Contact" asp-action="Index" class="nav-link" > CONTACT</a > </li >
+
+@if (User.Identity.IsAuthenticated) {
+    <li class="nav-settings">⚙️</li> <li class="user-menu"> <span class="user-name">@User.Identity.Name</span> </li> <li> <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;"> <button type="submit" class="btn-nav-primary">LOGOUT</button> </form> </li>
+}
+
+else {
+    <li class="nav-settings">⚙️</li> <li><a asp-controller="Account" asp-action="Login" class="btn-nav">LOGIN</a></li> <li><a asp-controller="Account" asp-action="Register" class="btn-nav-primary">START FREE TRIAL</a></li>
+}
+
+</ul >
+</div >
+</nav >
+</header >
+
+<main >
+@RenderBody()
+</main >
+
+<footer class="footer" >
+<div class="footer-bottom" >
+<p > © 2026 - CornerstoneDigital - <a asp-controller="Home" asp-action="Privacy" > Privacy</a > </p >
+</div >
+</footer >
+
+<script src="~/js/site.js" asp-append-version="true" > </script >
+@await RenderSectionAsync("Scripts", required: false)
+</body >
+</html >
